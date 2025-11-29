@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- عنوان طلایی + برند -->
+  <title>کُدچی | ابزار برنامه‌نویسی آنلاین فارسی: JSON Formatter, QR Code, JWT Decoder, Regex Tester</title>
+  
+  <!-- متا دسکریپشن ۱۵۵ کاراکتر (حداکثر جذابیت برای گوگل) -->
+  <meta name="description" content="کُدچی: همه ابزارهای برنامه‌نویسی فارسی یه جا → فرمت JSON، تولید QR Code، JWT Decoder، Regex Tester، Timestamp Converter، URL Encoder و ۱۰ ابزار دیگه. سریع، رایگان و بدون تبلیغات!">
+  
+  <!-- کلمات کلیدی مهم (گوگل مستقیم نمی‌خونه ولی بقیه موتورها و ابزارها می‌خونن) -->
+  <meta name="keywords" content="کدچی, ابزار برنامه نویسی, json formatter فارسی, qr code آنلاین, jwt decoder فارسی, regex tester, timestamp converter, url encoder, base64 آنلاین, کوتاه کننده لینک">
+  
+  <!-- Open Graph / فیسبوک + تلگرام + لینکدین -->
+  <meta property="og:title" content="کُدچی - بهترین ابزارهای برنامه‌نویسی فارسی">
+  <meta property="og:description" content="JSON Formatter، QR Code، JWT Decoder، Regex و کلی ابزار خفن دیگه، همه یه جا و رایگان!">
+  <meta property="og:image" content="https://kodchi.ir/og-image.jpg"> <!-- بعداً یه عکس 1200×630 با لوگو و متن خفن بساز -->
+  <meta property="og:url" content="https://kodchi.ir">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  
+  <!-- توییتر کارت -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="کُدچی - ابزار برنامه‌نویسی آنلاین فارسی">
+  <meta name="twitter:description" content="همه ابزارهایی که هر روز لازم داری، حالا فارسی و توی یک جا!">
+  <meta name="twitter:image" content="https://kodchi.ir/og-image.jpg">
+  
+  <!-- رنگ تم + آیکون -->
+  <meta name="theme-color" content="#00ff9d">
+  <meta name="msapplication-TileColor" content="#00ff9d">
+  
+  <!-- فاویکون + اپل تاچ آیکون -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- مانيفست PWA (اگه داری) -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- کانونیکال -->
+  <link rel="canonical" href="https://kodchi.ir">
+  
+  <!-- robots و sitemap برای گوگل -->
+  <meta name="robots" content="index, follow">
+  <link rel="sitemap" type="application/xml" href="https://kodchi.ir/sitemap.xml">
+  
+  <!-- سرعت لود (پیش‌اتصال به CDNها) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  <!-- استایل و اسکریپت‌ها -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js" defer></script>
+</head>
+  
+  <!-- فاویکون (فعلاً بدون عکس، بعداً اضافه می‌کنیم) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+  
+  <!-- استایل -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- رنگ‌های JSON -->
+  <style>
+    .json-string { color: #94f78b; }
+    .json-key { color: #ff8bf7; }
+    .json-number { color: #ffb366; }
+    .json-boolean { color: #8be9fd; }
+    .json-null { color: #ff79c6; }
+  </style>
+  
+  <!-- QR Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <!-- لودر -->
+  <div class="loader" id="loader">
+    <div style="font-size: 48px; animation: pulse 2s infinite;">🔧</div>
+    <p style="margin-top: 20px; font-size: 18px; color: #00ff9d; font-weight: 700;">در حال بارگذاری ابزارچی...</p>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>کُدچی</h1>
+      <p>همه ابزارهایی که یه برنامه‌نویس نیاز داره، یه جا!</p>
+    </div>
+  </header>
+
+  <!-- حمایت کوچیک و دلنشین — بدون درگاه بانکی -->
+<div style="text-align:center;margin:60px auto 40px;padding:28px 20px;max-width:750px;background:rgba(0,255,157,0.12);border:2px solid #00ff9d;border-radius:24px;box-shadow:0 15px 40px rgba(0,255,157,0.2);">
+  <p style="color:#e0e0e0;font-size:19px;margin:0 0 18px;line-height:1.7;">
+    اگه ابزارهای کدچی به کارت اومد و یه لبخند زدی 😊
+  </p>
+  <p style="color:#fff;font-size:25px;font-weight:bold;margin:15px 0;letter-spacing:2px;font-family:monospace;">
+    6219-8619-7307-3488
+  </p>
+  <p style="color:#ff79c6;font-size:18px;margin:8px 0;">
+    به نام رضا ملکی
+  </p>
+  <p style="color:#aaa;font-size:15px;margin-top:18px;">
+    هر چقدر دلت خواست، حتی ۱۰ تومن هم کلی انرژی می‌ده ❤️
+  </p>
+</div>
+
+  
+  <!-- فرم ورود/ثبت‌نام -->
+  <div id="auth-container">
+    <div id="signup-form">
+      <h3>ثبت نام</h3>
+      <input type="text" id="signup-username" placeholder="نام کاربری دلخواه">
+      <input type="password" id="signup-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)">
+      <button id="signup-btn-local" class="btn-tool">ثبت نام</button>
+      <p>حساب دارید؟ <span id="go-to-login" style="color:#00ff88;cursor:pointer;font-weight:700">ورود</span></p>
+    </div>
+
+    <div id="login-form" style="display:none;">
+      <h3>خوش آمدید!</h3>
+      <input type="text" id="login-username" placeholder="نام کاربری">
+      <input type="password" id="login-password" placeholder="رمز عبور">
+      <button id="login-btn-local" class="btn-tool">ورود</button>
+      <p>جدیدید؟ <span id="go-to-signup" style="color:#00ff88;cursor:pointer;font-weight:700">ثبت نام کنید</span></p>
+    </div>
+  </div>
+
+  <!-- ابزارها -->
+  <div class="container">
+    <section class="tools">
+
+      <!-- JSON Formatter -->
+      <div class="tool-card">
+        <h3>فرمت‌کننده JSON</h3>
+        <textarea id="json-input" placeholder="JSON خود را اینجا بچسبانید..."></textarea>
+        <div class="actions">
+          <button id="format-json" class="btn-tool">فرمت کن</button>
+          <button id="clear-json" class="btn-tool secondary">پاک کن</button>
+          <button id="download-json" class="btn-tool" disabled>دانلود JSON</button>
+        </div>
+        <pre id="json-output"></pre>
+      </div>
+
+      <!-- QR Code -->
+      <div class="tool-card">
+        <h3>تولیدکننده QR Code</h3>
+        <input type="text" id="qr-input" placeholder="متن، لینک یا هر چیزی که می‌خوای تو QR باشه">
+        <div class="actions">
+          <button id="generate-qr" class="btn-tool">تولید QR</button>
+          <button id="download-qr" class="btn-tool" disabled>دانلود تصویر</button>
+        </div>
+        <canvas id="qr-canvas" width="300" height="300"></canvas>
+      </div>
+
+      <!-- لینک کوتاه -->
+      <div class="tool-card">
+        <h3>کوتاه‌کننده لینک</h3>
+        <input type="text" id="short-url-input" placeholder="لینک بلند رو اینجا بچسبون[](https://...)">
+        <input type="text" id="short-custom-slug" placeholder="اسم دلخواه (اختیاری)">
+        <div class="actions">
+          <button id="create-short" class="btn-tool">کوتاه کن</button>
+          <button id="copy-short" class="btn-tool secondary" disabled>کپی لینک</button>
+        </div>
+        <div id="short-result"></div>
+      </div>
+
+      <!-- پسورد -->
+      <div class="tool-card">
+        <h3>تولیدکننده رمز عبور قوی</h3>
+        <input type="text" id="password-output" readonly placeholder="اینجا رمز ظاهر می‌شه">
+        <div class="actions">
+          <button id="generate-password" class="btn-tool">تولید رمز</button>
+          <button id="copy-password" class="btn-tool secondary">کپی رمز</button>
+        </div>
+      </div>
+
+      <!-- ابزارهای سریع -->
+      <div class="tool-card">
+        <h3>ابزارهای سریع</h3>
+        <textarea id="base64-input" placeholder="متن رو اینجا بنویس یا بچسبون" style="min-height:110px;"></textarea>
+        <div class="actions">
+          <button id="to-base64" class="btn-tool">به Base64</button>
+          <button id="from-base64" class="btn-tool secondary">دیکد Base64</button>
+          <button id="copy-base64" class="btn-tool secondary">کپی</button>
+        </div>
+        <pre id="base64-output"></pre>
+        <input type="text" id="email-check" placeholder="ایمیل رو وارد کن (مثال: test@gmail.com)">
+        <button id="check-email" class="btn-tool">بررسی اعتبار</button>
+        <div id="email-result"></div>
+      </div>
+
+      <!-- JWT / Token Decoder -->
+<div class="tool-card">
+  <h3>JWT Decoder</h3>
+  <textarea id="jwt-input" placeholder="توکن JWT خود را اینجا بچسبانید..." style="min-height:120px;font-family:monospace;font-size:14px;"></textarea>
+  <div class="actions">
+    <button id="decode-jwt" class="btn-tool">دیکد کن</button>
+    <button id="clear-jwt" class="btn-tool secondary">پاک کن</button>
+    <button id="copy-jwt" class="btn-tool secondary" disabled>کپی JSON</button>
+  </div>
+  <div style="margin-top:15px;">
+    <pre id="jwt-header" class="json-output"></pre>
+    <pre id="jwt-payload" class="json-output"></pre>
+    <p id="jwt-error" style="color:#ff5555;margin-top:10px;display:none;"></p>
+  </div>
+</div>
+
+<!-- Regex Tester -->
+<div class="tool-card">
+  <h3>Regex Tester</h3>
+  <textarea id="regex-pattern" placeholder="رجکس خود را وارد کنید (مثل ^\\d{11}$)" style="margin-bottom:10px;"></textarea>
+  <textarea id="regex-text" placeholder="متن برای تست..." style="min-height:140px;"></textarea>
+  <div class="actions">
+    <button id="test-regex" class="btn-tool">تست کن</button>
+    <button id="clear-regex" class="btn-tool secondary">پاک کن</button>
+  </div>
+  <div id="regex-result" style="margin-top:15px;padding:12px;background:rgba(0,255,157,0.1);border-radius:12px;min-height:60px;font-family:monospace;"></div>
+</div>
+
+<!-- Timestamp Converter -->
+<div class="tool-card">
+  <h3>Timestamp Converter</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+    <div>
+      <label style="color:#aaa;font-size:14px;">یونیکس (ثانیه)</label>
+      <input type="text" id="unix-input" placeholder="مثلاً 1735600000">
+    </div>
+    <div>
+      <label style="color:#aaa;font-size:14px;">تاریخ و ساعت</label>
+      <input type="text" id="datetime-output" readonly placeholder="اینجا نمایش داده میشه">
+    </div>
+  </div>
+  <div class="actions" style="margin-top:15px;">
+    <button id="convert-unix" class="btn-tool">به تاریخ</button>
+    <button id="now-timestamp" class="btn-tool secondary">الان</button>
+    <button id="copy-timestamp" class="btn-tool secondary" disabled>کپی</button>
+  </div>
+</div>
+
+<!-- URL Encoder / Decoder -->
+<div class="tool-card">
+  <h3>URL Encoder / Decoder</h3>
+  <textarea id="url-input" placeholder="متن یا URL خود را اینجا بنویسید..." style="min-height:130px;"></textarea>
+  <div class="actions">
+    <button id="encode-url" class="btn-tool">Encode → %20</button>
+    <button id="decode-url" class="btn-tool secondary">Decode ← %20</button>
+    <button id="copy-url" class="btn-tool secondary" disabled>کپی نتیجه</button>
+  </div>
+  <div id="url-output" style="margin-top:15px;padding:18px;background:rgba(0,255,157,0.08);border:2px solid #00ff9d;border-radius:16px;min-height:120px;max-height:250px;overflow:auto;word-break:break-all;font-family:monospace;font-size:19px;line-height:1.8;color:#fff;letter-spacing:0.5px;"></div></div>
+
+    </section>
+  </div>
+
+  <footer style="margin-top:100px;padding:50px 20px;background:#0a0e1a;border-top:3px solid #00ff9d;text-align:center;color:#aaa;font-size:15px;">
+  <div class="container" style="max-width:1000px;margin:0 auto;">
+
+    <p style="margin:0 0 15px;color:#888;">
+      © ۱۴۰۴ کُدچی — همه ابزارهای برنامه‌نویسی فارسی، یه جا
+    </p>
+
+    <p style="margin:15px 0 0;color:#bbb;">
+      نیاز به طراحی سایت، ربات، اپلیکیشن یا پروژه اختصاصی داری؟  
+      <br>
+      <a href="https://www.instagram.com/rezamaleki.66?igsh=MTFuNjJ2eWxiNm1iZQ%3D%3D&utm_source=qr" target="_blank" style="color:#00ff9d;text-decoration:none;font-weight:600;">اینستاگرام</a>
+      <span style="color:#666;margin:0 10px;">•</span>
+      <a href="https://t.me/Rezamaleki666" target="_blank" style="color:#00ff9d;text-decoration:none;font-weight:600;">تلگرام</a>
+    </p>
+
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
